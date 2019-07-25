@@ -9,7 +9,7 @@ ALTER ROLE quizproject1 SET default_transaction_isolation TO 'read committed'; <
 ALTER ROLE quizproject1 SET timezone TO 'UTC';<br/>
 GRANT ALL PRIVILEGES ON DATABASE quizproject1 TO quizproject1;<br/>
 \q<br/>
-<br/><br/>
+<br/><br/><br/
 mkdir quizapp and cd<br/>
 git clone this app<br/>
 make venv: python3 -m venv venv_quizapp<br/>
