@@ -1,0 +1,8 @@
+Django==2.0.1
+django-nested-admin==3.2.3
+pkg-resources==0.0.0
+psycopg2-binary==2.8.3
+python-monkey-business==1.0.0
+pytz==2019.1
+six==1.12.0
+sqlparse==0.3.0

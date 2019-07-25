@@ -1,0 +1,58 @@
+{% load static %}<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Quiz{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-sm-12">
+          <div class="row">
+            <div class="col-6">
+              <h1 class="logo">
+                <a href="{% url 'home' %}">
+                  Quiz App
+                </a>
+              </h1>
+            </div>
+            <div class="col-6 text-right">
+              {% if user.is_authenticated %}
+                <p class="pt-3">Вы зашли как <strong> <a href="{% url 'view_profile' user.username %}">{{ user.username }}</a> </strong>. <a href="{% url 'logout' %}">Выйти</a>.</p>
+              {% else %}
+                <a href="{% url 'login' %}" class="btn btn-light" role="button">Войти</a>
+                <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Зарегистрироваться</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              {% endfor %}
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      })
+    </script>
+  </body>
+</html>

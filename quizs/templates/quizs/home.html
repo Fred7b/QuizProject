@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p class="lead">
+    Если у вас есть аккаунт войдите в него <a href="{% url 'login' %}">Войти</a>. Или создайте новый <a href="{% url 'signup' %}">Новый аккаунт </a>
+{% endblock %}

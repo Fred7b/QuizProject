@@ -1,0 +1,10 @@
+<h2>Тесты</h2>
+
+<ul class="nav nav-tabs mb-3">
+  <li class="nav-item">
+    <a class="nav-link{% if active == 'new' %} active{% endif %}" href="{% url 'examinee:quiz_list' %}">Новые тесты</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link{% if active == 'taken' %} active{% endif %}" href="{% url 'examinee:taken_quiz_list' %}">Завершенные</a>
+  </li>
+</ul>

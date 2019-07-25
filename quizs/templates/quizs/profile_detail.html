@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                 <div class="col-xs-12 col-sm-8">
+                    <h2>{{ user.username }}</h2>
+                     <a href="{% url 'edit_profile'%}">Редактирование профиля</a>
+                     <p><strong>E-mail:</strong> {{ user.email }}</p>
+                    <p><strong>Пол:</strong> {{ user.examinee.gender }}</p>
+                     <p><strong>Обо мне: </strong> {{ user.examinee.about_me }}</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
