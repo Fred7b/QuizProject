@@ -2,23 +2,23 @@ sudo -u postgres psql
 
 Создадим базу данных;
 
-CREATE DATABASE quizproject1;
-CREATE USER quizproject1 WITH PASSWORD 'quizproject1'; --не нужен когда юзер создан
-ALTER ROLE quizproject1 SET client_encoding TO 'utf8'; 
-ALTER ROLE quizproject1 SET default_transaction_isolation TO 'read committed'; 
-ALTER ROLE quizproject1 SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE quizproject1 TO quizproject1;
-\q
-
-mkdir quizapp and cd
-git clone this app
-make venv: python3 -m venv venv_quizapp
-source venv_quizapp/bin/activate
-pip install -r requirements.txt
-python manage.py createsuperuser
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+CREATE DATABASE quizproject1;<br/>
+CREATE USER quizproject1 WITH PASSWORD 'quizproject1'; --не нужен когда юзер создан<br/>
+ALTER ROLE quizproject1 SET client_encoding TO 'utf8'; <br/>
+ALTER ROLE quizproject1 SET default_transaction_isolation TO 'read committed'; <br/>
+ALTER ROLE quizproject1 SET timezone TO 'UTC';<br/>
+GRANT ALL PRIVILEGES ON DATABASE quizproject1 TO quizproject1;<br/>
+\q<br/>
+<br/><br/>
+mkdir quizapp and cd<br/>
+git clone this app<br/>
+make venv: python3 -m venv venv_quizapp<br/>
+source venv_quizapp/bin/activate<br/>
+pip install -r requirements.txt<br/>
+python manage.py createsuperuser<br/>
+python manage.py makemigrations<br/>
+python manage.py migrate<br/>
+python manage.py runserver<br/>
 
 
 ![Image alt](/prtscr/start.png)
